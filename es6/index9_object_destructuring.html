@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        var person={
+            Name:'Sumeet',
+            Location:"Noida"
+        }
+        let Name,Location,extra;
+        ({Name,Location}=person);//it will search for 'Name' & 'Location' in 'person' and fetch value from it.
+        ({extra}=person);// 'extra' will be undefined.
+        
+        var anotherperson={
+            Name:'Utkarsh',
+            Location:"Lucknow"
+        };
+        ({Name}=anotherperson);
+    </script>
+</head>
+
+</html>

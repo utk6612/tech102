@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        // ES6 // SET declaration & initialization
+        //SET does not work with indexes
+        var cityData=new Set();
+        cityData.add('Pune');
+        cityData.add('Noida');
+        cityData.add('Gurugram');
+        cityData.add('Nagpur').add('Mumbai').add('Noida');
+
+        //cityData.forEach((city)=>{console.log(city)});
+        for(let c of cityData){
+            console.log(c);
+        }
+        
+        let countries=["India","Australia","US"];
+        let setCountries=new Set(countries);
+        let otherCountries=['UK','Fiji','US'];
+
+        for(var i=0;i< otherCountries.length;i++){
+            setCountries.add(otherCountries[i]);// it will only add unique values
+            //it will not add values which are already in the set.
+        }
+
+        console.log(setCountries);
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,55 @@
+-->REACT is used to create single page applications.
+It only takes care of view port.
+-->framework used with react is "Redux"
+-->React is faster than Angular.
+-->React is pluggable
+-->React is isomorphic.Means HTML code can run on client and server.
+-->React does not support 2-way binding.
+
+JSX:
+->"html" in javascript.
+->It compiles to javascript.
+->Differences- className,htmlFor
+
+-->In react two files needs to be included.
+:react.js & react-dom.js
+
+-->We create virtual dom in react.
+-->Fragment is a collection of elements which is to be rendererd.
+React Components:
+->Reusable
+->Maintainable
+->Composable
+
+
+componentWillRecieveProps-> it will be fired when new props are
+instantiated. Not on the first call.
+
+On first call following methods are fired:
+-componentWillMount
+-render
+-componentDidMount
+
+shouldComponentUpdate: it is called after setState.
+	if it returns true then componentWillUpdate is called.and
+render is called.then componentDidUpdate is called.
+
+Lifecyle states:
+componentWillMount
+componentDidMount
+componentWillRecieveProps
+shouldComponentUpdate
+componentWillUpdate
+componentDidUpdate
+componentWillUnmount
+
+Container Component: it contains states of child component.
+
+
+******************************REDUX***************************
+-->In there is a Storage which contains states of all the components.
+-->Reducer is linked with Storage which reduces the scope of components
+to access the storage.
+-->REDUX manages the states.
+--> It can also be used for Angular.
+

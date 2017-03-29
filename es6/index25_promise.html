@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+    // AJAX PROMISE
+        function GetData(){
+            return new Promise(function(resolve,reject){
+                var requestObj=new XMLHttpRequest();//who makes ajaxified request
+                requestObj.onreadystatechange=function(){
+                    if(requestObj.readyState==4 && requestObj.status==200){
+                        //success
+                        resolve(requestObj.responseText);//server
+                    }
+                    else if(requestObj.readyState==4 && requestObj.status!=200){
+                        reject('Some error occured!'+requestObj.statusText);
+                    }
+                }//onreadystatechange!
+                requestObj.open('GET','https://jsonplaceholder.typicode.com/posts');
+                requestObj.send();
+            });
+        }
+        GetData().then((response)=>{
+            console.log(response);
+        }).catch((rejection)=>console.log(rejection));
+    </script>
+</head>
+
+</html>

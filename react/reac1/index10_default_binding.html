@@ -1,0 +1,66 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+         <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+
+         <style>
+            #martheader{
+                text-align:center;
+            }
+            img{
+                height: 300px;
+            }
+         </style>
+    </head>
+    <body>
+        <div id="content">
+
+        </div>
+
+        <script type="text/jsx">
+        var ProductComponent=React.createClass({
+            propTypes:{// this method is for making things mandatory// to apply conditons on values passed.
+                //if pName is not passed and not defined in DefaultProps then it will show a warning
+
+
+                pName:React.PropTypes.string.isRequired,
+                pid:React.PropTypes.number // now pid is binded to a number. If it recieves a string then it will show a warning.
+            },
+
+            getDefaultProps:function(){// if no imgUrl is passed then this will execute
+                return{
+                    imgUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIYYuw2f9EsdDLX4gA5301JuAnGV0THKs3-pjP8wbHxrjFtULC40w_Pw'
+                }
+            },
+            render:function(){
+                return(
+                    <div>
+                    <pre>
+                    <h1 className="col-xs-4">{this.props.pid}-{this.props.pName}</h1>
+                    {/*props store all the values passed*/}
+                    <img src={this.props.imgUrl}></img>
+                    </pre>
+                    </div>
+                )
+            }
+        });
+        var ShoppingCart=React.createClass({
+            render:function(){
+                return(<div>
+                        <h1 id="martheader">Welcome to ShoppingMart</h1>
+                        <ProductComponent pid={1} pName="Iphone 7" imgUrl="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone7/jetblack/iphone7-jetblack-select-2016?wid=300&hei=300&fmt=png-alpha&qlt=95&.v=1472430076339"></ProductComponent>
+                        <ProductComponent pid={2} pName="Camera" imgUrl="https://www.bhphotovideo.com/images/images2000x2000/canon_eos_5d_mark_iv_1274706.jpg"></ProductComponent>
+                        <ProductComponent pid="3" pName="Something"></ProductComponent>
+                    </div>)
+            }
+        });
+        ReactDOM.render(<ShoppingCart/>,document.querySelector("#content"));
+        </script>
+    </body>
+</html>

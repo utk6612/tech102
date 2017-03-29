@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        class Car{
+            constructor(id=0,name="",speed=0){
+                this.id=id;
+                this.name=name;
+                this.Speed=speed;
+            }
+        }
+
+        class JamesBondCar extends Car{
+            constructor(id,name,speed,canFly,canSubmerge){
+                super(id,name,speed);
+                this.canFly=canFly;
+                this.canSubmerge=canSubmerge;
+            }
+
+            toString(){
+                return `The car ${this.name} is running @ ${this.Speed} kmph!`;
+            }
+        }
+
+        var obj=new JamesBondCar(007,"Houston",300,true,true);
+        console.log(obj.id);
+        console.log(obj.name);
+        console.log(obj.Speed);
+        console.log(obj.toString());
+    </script>
+</head>
+
+</html>

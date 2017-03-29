@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+         <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            
+        </div>
+        <script type="text/jsx">
+            var FirstReactComponent=React.createClass({
+                // render:function(){
+                //     return React.createElement("h1",{id:'myHeader'},"h1 as Component");
+                // }
+
+                render:function(){
+                    return (<section>
+                            <h1 className="Header">h1 as Component(jsx)</h1>
+                            <h2>Sub Heading</h2>
+                            <p>Para</p>
+                    </section>);
+                }
+            });
+
+            ReactDOM.render(React.createElement(FirstReactComponent),document.querySelector('#content'));
+        </script>
+    </body>
+</html>

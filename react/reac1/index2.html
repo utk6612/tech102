@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="content">
+            
+        </div>
+        <script>
+            var h1Element=React.DOM.h1({id:'myHeader',className:'Header'},"HelloReactJS!");
+            var h2Element=React.DOM.h2({id:'mySubHeader'},"Sub Heading");
+            var pElement=React.createElement('p',{},'New Para!');
+
+            var fragment=[h1Element,h2Element,pElement];
+
+            var sectionElement=React.createElement('section',{},fragment);
+            ReactDOM.render(sectionElement,document.querySelector('#content'));
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        function TestFunctionScope(){
+            if(true){
+                let InnerFunc=function(){
+                    console.log('Within InnerFunc!');
+
+                }
+                InnerFunc();
+            }
+            //InnerFunc();//error because of let scope
+        }
+        TestFunctionScope();
+    </script>
+</head>
+
+</html>

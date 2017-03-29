@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        // function Car(){
+        //     this.id=0;
+        //     this.Name='Utkarsh';
+        //     this.Speed=100;
+        //         }
+
+
+
+       // es 6!!!!
+
+       class Car{//In JS classes/functions are hoisted bt in ES6 classes are not hoisted.
+           constructor(id,name,speed){// in es6 constructor defines the variables. We cannot define at class level.
+            this.id=id;
+            this.Name=name;
+            this.Speed=speed;
+           };
+
+           accelerate(){// this is the way to define a function inside class in Es6
+               console.log("function called");
+               console.log(this.Name);
+           };
+       
+        static accelerate1(){//cannot be called from object niether can access this variables.
+            console.log("static function called");
+        }
+       };
+
+       var car=new Car(10,'i20',100);        
+       console.log(car.accelerate());
+      // console.log(car.accelerate1());  //error
+    </script>
+</head>
+
+</html>

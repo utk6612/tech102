@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+         <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+    </head>
+    <body>
+        <div id="content"></div>
+
+        <script type= "text/jsx">
+            class ButtonComponent extends React.Component{
+                constructor(props){
+                    super(props);
+                this.state={
+                    counter:this.props.initialCount
+                }
+                }
+                incrementCount(){
+                    this.setState({counter:this.state.counter+1});
+                }
+                render(){
+                    return(<button onClick={this.incrementCount.bind(this)} className="btn btn-primary">{this.state.counter}</button>)
+                }
+            };
+
+            class ButtonListComponent extends React.Component{
+                constructor(props){
+                    super(props);
+                this.state={
+                    buttonList:[10,20,30,40]
+                }
+                }
+                render(){
+                    var buttontoBeCreated=this.state.buttonList.map(function(item,key){
+                    return <ButtonComponent initialCount={item}/>
+                    });
+                    return(<div>
+                            {buttontoBeCreated}
+                        </div>);
+                }
+            };
+            ReactDOM.render(<ButtonListComponent />,document.querySelector("#content"));
+        </script>
+    </body>
+</html>

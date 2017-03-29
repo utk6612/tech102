@@ -1,0 +1,4 @@
+.**********************
+
+extends is not used in angular 2. We use decoraters.
+ 

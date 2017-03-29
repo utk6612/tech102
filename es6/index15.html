@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        function Print(noOfPages,author,type,distCode){
+            console.log(noOfPages||0);
+            console.log(author||'unknown');
+            console.log(type||'unknown');
+            console.log(distCode || 0);
+        }
+        Print();
+
+
+        console.log("............................................");
+        //with ES6 default parameters
+
+        function Print2(noOfPages=0,author='unknown',type='b/w',distCode=0){//default values in ES6
+            console.log(noOfPages,author,type,distCode);
+        };
+        Print2(1000,'Paul','color',1456);
+        Print2();
+
+        console.log("................................................");
+        let pages=100;
+        function Print3(noOfPages=pages){ // default value
+            //console.log(pages);//ERROR// because the interpreter will check at the block level//hence const will conflict.
+            // while var will show undefined because it gets hoisted.
+            const pages=1000000; // this value will not be changed in noOfPages default value.
+            console.log(noOfPages);
+
+        }
+
+        Print3();
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+
+        let i=1;
+      function MakeAPromise(){  
+        var p=new Promise(function(resolve,reject){
+            if(i>2){
+                setTimeout(()=>resolve("i is 2!"),5000);
+            }
+            else
+            throw new Error("i is not 2");
+        });
+        return p;
+      };
+        
+        MakeAPromise().then(function(response){
+            response+=200;
+            console.log(response);
+        }).catch(function(rejectReason){// .catch is only for error/reject
+            console.log("Inside Reject:"+rejectReason);
+        });
+
+        console.log("Wait for resuilt");
+
+    </script>
+</head>
+
+</html>

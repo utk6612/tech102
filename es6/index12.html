@@ -1,0 +1,30 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+       
+        //    function Employee(){
+        //        this.Salary=20000;
+        //        var self=this; //  self is allowing to continue the scope of 'e' object when call back function is called.
+        //        setInterval(function(){
+        //            self.Salary+=10000;
+        //        },2000)
+        //    }
+        //  var e=new Employee();
+
+
+        function Employee(){
+            this.Salary=20000;
+            setInterval(()=>{// here call-back function is binded with the object 'e' hence after every 2sec it gets updated. 
+                this.Salary+=10000;
+            },2000)
+        }
+        var e=new Employee();
+        /*
+        *Arrow function is used wherever anonymous functions are used.
+        */
+
+    </script>
+</head>
+
+</html>

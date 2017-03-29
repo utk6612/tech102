@@ -1,0 +1,11 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import FormsClickComponent from './4clickHandler';
+import FormsComponent from './4usingForms';
+import PhotoComponent from './5photo';
+//import AlbumComponent from './5album';
+import AlbumComponent from './6album';
+//ReactDOM.render(<FormsComponent/>,document.getElementById("content"));
+//ReactDOM.render(<FormsClickComponent/>,document.getElementById("content"));
+//ReactDOM.render(<PhotoComponent/>,document.getElementById("content"));
+ReactDOM.render(<AlbumComponent/>,document.getElementById("content"));

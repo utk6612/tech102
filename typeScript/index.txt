@@ -1,0 +1,3 @@
+
+tsc app.ts --out application.js
+tsc app.ts --target es6

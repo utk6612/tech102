@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        let map=new Map();
+        map.set("Pune","Maharashtra");//Pune is key and Maharashtra is value
+        map.set("Gurgaon","Haryana");
+        map.set("Noida","UP");
+        map.set("Noida","UttarPradesh");//"Uttar Pradesh"" will be overwritten on 'Noida' key
+
+
+
+        // for(let entry of map){
+        //     console.log(entry[0]+" is in " +entry[1]);
+        // }
+
+        var cityIterator=map.entries();//returns an iterator!
+        //iterator has next() which has 'value' & 'done'
+        var nextCity=cityIterator.next();
+
+        console.log(nextCity.value[0] + " is in "+nextCity.value[1]);
+
+        // deleting a particular key value pair
+        map.delete("Noida");
+         for(let entry of map){
+            console.log(entry[0]+" is in " +entry[1]);
+        }
+
+    </script>
+</head>
+
+</html>

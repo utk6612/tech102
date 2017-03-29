@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+
+        let myObj={
+            
+            [Symbol.iterator](){
+                let currItem="",cnt=0
+                return{
+                    data:['mon','tue','wed'],
+                    next(){
+                        if(cnt< this.data.length){
+                            return{
+                                done:false,value:this.data[cnt++]
+                            }
+                        }
+                        return{
+                            done:true,value:undefined
+                        }
+                    }
+                }
+            }
+        }
+        for(let i of myObj){
+            console.log(i);
+        }
+    </script>
+</head>
+
+</html>

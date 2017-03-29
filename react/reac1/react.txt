@@ -1,0 +1,22 @@
+-->REACT is used to create single page applications.
+It only takes care of view port.
+-->framework used with react is "Redux"
+-->React is faster than Angular.
+-->React is pluggable
+-->React is isomorphic.Means HTML code can run on client and server.
+-->React does not support 2-way binding.
+
+JSX:
+->"html" in javascript.
+->It compiles to javascript.
+->Differences- className,htmlFor
+
+-->In react two files needs to be included.
+:react.js & react-dom.js
+
+-->We create virtual dom in react.
+-->Fragment is a collection of elements which is to be rendererd.
+React Components:
+->Reusable
+->Maintainable
+->Composable

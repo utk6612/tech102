@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        function* empldgenerator(){
+            var index=0;
+
+            while(index<20){
+                yield index++;//returns the current value//yield is always used with * function
+                //it stops the current execution
+                //yield returns object which contains 'done=false' and 'value=index'
+                //yield has next() predefined.
+
+                
+                //continues when called again
+            }
+        }
+
+        var gen=empldgenerator();
+        console.log(gen.next().value);
+    </script>
+</head>
+
+</html>

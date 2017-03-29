@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        class Car{
+            constructor(name,speed=0){
+                this.name=name;
+                this.speed=speed;
+            }
+            get CarName(){
+                return this.name;
+            }
+            set CarName(name){
+                this.name=name;
+            }
+        }
+        var car=new Car();
+        car.CarName="Huston";// Set Gets called implicitly
+    </script>
+</head>
+
+</html>

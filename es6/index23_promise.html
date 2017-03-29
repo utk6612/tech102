@@ -1,0 +1,23 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        var p=new Promise(function(resolve,reject){
+           // setTimeout(()=>resolve(100),2000);
+            //setTimeout(()=>reject("Rejected"),2000);
+            throw new Error();
+        });
+
+        p.then(function(response){//1st function in .then is for resolve.
+            response+=100;
+            console.log(response);
+        },//there can be only ttwo functions in .then
+
+        (rejectReason)=>{//2nd function is for reject always
+            console.log(rejectReason);
+        })
+        console.log('Wait for the result');
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,64 @@
+<!Doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+         <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+
+         <style>
+            #martheader{
+                text-align:center;
+            }
+            img{
+                height: 300px;
+            }
+         </style>
+    </head>
+    <body>
+
+        <div id="content">
+
+        </div>
+        <!--props are immutable i.e. it cannot be changed.
+        so state is used-->
+        <script type="text/jsx">
+            var ButtonComponent=React.createClass({
+                getInitialState:function(){
+                    return{counter:this.props.InitialCount};
+                },
+                incrementCount:function(){
+                    this.setState({counter:this.state.counter+1});
+
+                    
+                    /*after setState the React automatcally calls render method.
+                    *it does not refresh the whole page. diffing algorithm detects the state which has
+                    changed and only updates that particular state.*/
+                },
+                render:function(){
+                    return(<button onClick={this.incrementCount} className="btn btn-primary btn-sm">
+                            {this.state.counter}
+                        </button>);
+                }
+            });
+
+            var ButtonListComponent=React.createClass({
+                render:function(){
+                    return(
+                        <div>
+                            <ButtonComponent InitialCount={10}/>
+                            <ButtonComponent InitialCount={30}/>
+                            <ButtonComponent InitialCount={40}/>
+                            </div>
+                    );
+                }
+            });
+
+            ReactDOM.render(<ButtonListComponent/>,document.querySelector("#content"));
+
+        </script>
+    </body>
+</html>    

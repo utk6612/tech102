@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        const MyKEY=Symbol();
+        const AnotherKey=Symbol();
+        let obj={};
+        obj[MyKEY]="Hello!";
+        obj[AnotherKey]="Hi!";
+
+        console.log(obj[MyKEY]);
+        var arr=['MON','TUE','WED'];
+
+        var itr=arr[Symbol.iterator]();
+        console.log(itr.next().value);
+        //100 lines of code!
+        console.log(itr.next().value);
+    </script>
+</head>
+
+</html>
+
+
+

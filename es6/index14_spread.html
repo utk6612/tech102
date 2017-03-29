@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var cars=['BMW','AUDI','Hyundai'];
+        var moreCars=['Mahindra','Tata'];
+        moreCars.push(cars);
+        console.log(moreCars);
+        moreCars.pop();
+        moreCars.push(...cars);// '...' is the spread operator which spreades the pushed array.
+        console.log(moreCars);
+
+        var allCars=[...cars,...moreCars];//spreades cars and moreCars and stores them in allCars
+        console.log(allCars);
+
+        function print(noofPages,...restOfArgs){//now it can take any number of arguments
+                let author;
+                [,author]=restOfArgs;// 2nd value of array will be fetched.
+                console.log(author);
+        }
+        print(1000,'Colour','Paulo Coelho');
+        print(100,'B/W');
+        print(100,'B/W','Stephen Hawkings',1456);
+
+        
+        console.log("...........................");
+        function print2(noofPages,author,type,distCode){
+            console.log(noofPages,author,type,distCode);
+        }
+        var ex=[1000,'Paulo','Colour',1456];
+        print2(...ex);
+    </script>
+</head>
+</html>

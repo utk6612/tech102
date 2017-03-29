@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        class Person{
+            constructor(...details){
+                [this.name,this.age]=details;
+
+            }
+            PrintDetails(){
+                return `${this.name} is ${this.age} years old`;
+            
+            }
+        }
+
+        class Employee extends Person{
+            constructor(name,age,sal,email){
+                super(name,age);
+                this.salary=sal;
+                this.email=email;
+            }
+            PrintDetails(){
+                console.log(`${super.PrintDetails()}. His salary is ${this.salary}. And his email is ${this.email}`);
+            }
+        }
+
+        var obj=new Employee("Utkarsh",22,50000,"@gmail.com");
+        console.log(obj);
+        obj.PrintDetails();
+    </script>
+</head>
+
+</html>

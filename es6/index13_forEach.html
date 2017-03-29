@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+       var cars=["BMW","AUDI","HYUNDAI","HONDA"];
+
+       cars.forEach(function(ele,ind){
+           console.log(ele+" is at "+ind);
+       }) 
+       console.log("...........ES6...........");
+       ///Arrow
+       cars.forEach((ele,ind)=>console.log(ele+" is at "+ind));
+       //or
+       cars.forEach((ele,ind)=>console.log(`${ele} is at ${ind}`));
+
+
+       var longString=`
+       A Very
+       Long String
+       Distributed
+       In multiple Lines`;//Back tick is used to print string in exact format.
+       console.log(longString);
+    </script>
+</head>
+
+</html>

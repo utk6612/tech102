@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+         <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+         <style>
+            #tform{
+                border:black 1px solid;
+                padding:10px;
+            }
+
+         </style>
+    </head>
+    <body>
+        <div id="content">
+            
+        </div>
+        <script>
+            
+            var FormComponent=React.createClass({
+                render:function(){
+                            var inputTxt=React.createElement("input",{type:"text",className:"form-control"});
+                            var btnElement=React.createElement("input",{type:"button",className:"btn btn-primary",value:"Submit"});
+                            var fragment=[inputTxt,btnElement];
+                    return(
+                            React.createElement("form",{},fragment)
+                             );
+                }
+            });
+
+            ReactDOM.render(React.createElement(FormComponent),document.querySelector("#content"));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+<head>
+    <script>
+        var y=20;
+        let x=10;
+
+        function TestMonth(yesORno){
+            if(yesORno){
+                let month="March";// let allows the variable to be accessed only in the scope in which it is declared.
+                if(true){
+                    console.log(month);
+                }
+            }
+            console.log(month);
+        }
+
+        TestMonth(true);
+    </script>
+</head>
+
+</html>
